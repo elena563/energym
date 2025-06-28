@@ -1,15 +1,15 @@
-# Energym - Sito Web Ufficiale
+# Energym - Centro Fitness
 
-Sito vetrina responsive per **Energym**, palestra moderna pensata per offrire allenamenti personalizzati, corsi di gruppo e un ambiente accogliente e motivante. Il progetto è progettato per garantire performance, chiarezza e una forte identità visiva.
+Sito vetrina responsive per **Energym**, palestra moderna pensata per offrire allenamenti personalizzati, corsi di gruppo e un ambiente accogliente e motivante.
 
 ## Tecnologie
 
-- **HTML5** semantico
+- **HTML5**
 - **Tailwind CSS** per il design responsive
 - **Alpine.js** per interazioni leggere
 - **Swiper.js** per caroselli dinamici
 
-## 🧭 Sezioni Principali
+## Sezioni Principali
 
 - **Hero** con slogan, CTA e contatto rapido
 - **La tua palestra** – sezione “chi siamo” con mission e valori
@@ -18,7 +18,7 @@ Sito vetrina responsive per **Energym**, palestra moderna pensata per offrire al
 - **Contatti** – form, indirizzo, mappa e social
 - **Footer** – info legali e navigazione rapida
 
-## 📱 Ottimizzazione Mobile
+## Ottimizzazione Mobile
 
 - Menu a scomparsa con animazione fluida
 - CTA sempre visibili

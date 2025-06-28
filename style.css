@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Monument';
+  src: local('monument extended'), url('/assets/MonumentExtended-Ultrabold.otf') format('truetype');
+  font-display: block;
+}
+
+h1{
+    font-family: 'Monument';
+}
+
+:root {
+    --swiper-theme-color: #000;
+}

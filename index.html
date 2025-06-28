@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it" x-data="{ menuOpen: false }" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energym Centro Fitness</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> <!-- script slider -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-7 px-8 fixed w-full z-50 shadow">
+    <div class="max-w-full mx-auto flex justify-between items-center">
+        <a href="index.html"><div class="flex gap-[8px] items-center">
+            <iconify-icon icon="map:gym" width="28" height="28"  style="color: #fff"></iconify-icon>
+            <h1 class="text-2xl font-bold">Energym</h1>
+        </div></a>
+
+    <!-- Hamburger -->
+    <button @click="open = !open" class="md:hidden" aria-label="Menu" x-data="{ open: false }">
+      <svg :class="{ 'hidden': open }" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg :class="{ 'hidden': !open }" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+
+      <!-- Menu mobile -->
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 scale-y-75"
+        x-transition:enter-end="opacity-100 scale-y-100"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 scale-y-100"
+        x-transition:leave-end="opacity-0 scale-y-75"
+        class="absolute top-full left-0 w-screen bg-white shadow-md origin-top flex flex-col text-center"
+        @click.away="open = false"
+        style="transform-origin: top;"
+      >
+        <a href="#servizi" class="py-3 text-lg font-bold border-b text-gray-700">Servizi</a>
+        <a href="#istruttori" class="py-3 text-lg font-bold border-b text-gray-700">Istruttori</a>
+        <a href="#orari" class="py-3 text-lg font-bold border-b text-gray-700">Orari</a>
+        <a href="#contatti" class="py-3 text-lg font-bold text-gray-700">Contatti</a>
+      </div>
+    </button>
+
+    <!-- Menu desktop -->
+      <nav class="space-x-4 hidden md:block">
+        <a href="#servizi" class="text-lg font-bold hover:text-yellow-400">Servizi</a>
+        <a href="#istruttori" class="text-lg font-bold hover:text-yellow-400">Istruttori</a>
+        <a href="#orari" class="text-lg font-bold hover:text-yellow-400">Orari</a>
+        <a href="#contatti" class="text-lg font-bold hover:text-yellow-400">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="px-6 bg-[url('assets/hero.png')] min-h-[600px] w-full bg-cover bg-top h-screen flex items-center justify-left text-left text-white pt-60 pb-20">
+    <div class="py-8 rounded-xl max-w-lg md:max-w-xl my-30">
+      <h2 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-4">Raggiungi i tuoi obiettivi</h2>
+      <p class="mb-6">Allenamenti personalizzati e corsi per ogni livello</p>
+      <a href="#contatti" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Prenota una prova gratuita</a>
+    </div>
+  </section>
+  <!-- About -->
+  <section class="px-6 flex py-20 items-center justify-around flex-col md:flex-row gap-4">
+    <div class="max-w-xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">La tua palestra</h2>
+      <p class="mb-6">Energym è più di una semplice palestra: è un ambiente dove motivazione, professionalità e benessere si incontrano. Offriamo spazi moderni, attrezzature all'avanguardia e uno staff qualificato pronto ad accompagnarti in ogni fase del tuo percorso. Siamo qui per aiutarti a raggiungere i tuoi obiettivi, con passione e risultati concreti.</p>
+    </div>
+    <img class="max-w-lg w-full md:w-1/2" src="assets/about.jpg" alt="Energym centro fitness">
+  </section>
+  <!-- servizi -->
+  <section id="servizi" class="py-16 bg-yellow-400">
+    <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">I nostri servizi</h2>
+    <div class="swiper mySwiper max-w-6xl mx-auto px-4 h-full">
+        <div class="swiper-wrapper h-full">
+            <div class="swiper-slide bg-white p-6 rounded-xl shadow hover:shadow-md transition h-full">
+            <img src="assets/services3.jpg" alt="Corso CrossFit" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">CrossFit</h3>
+            <p class="text-gray-700">Allenamento ad alta intensità per migliorare forza, resistenza e agilità. Adatto a tutti i livelli.</p>
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-xl shadow hover:shadow-md transition h-full">
+            <img src="assets/services5.jpg" alt="Yoga" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Yoga & Stretching</h3>
+            <p class="text-gray-700">Lezioni guidate per migliorare flessibilità, concentrazione e benessere mentale.</p>
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-xl shadow hover:shadow-md transition h-full">
+            <img src="assets/services2.jpg" alt="Personal Training" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Personal Training</h3>
+            <p class="text-gray-700">Programmi su misura con un coach dedicato, per risultati rapidi e sicuri.</p>
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-xl shadow hover:shadow-md transition h-full">
+            <img src="assets/services1.jpg" alt="Personal Training" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Pilates</h3>
+            <p class="text-gray-700">Programmi su misura con un coach dedicato, per risultati rapidi e sicuri.</p>
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-xl shadow hover:shadow-md transition h-full">
+            <img src="assets/services4.jpg" alt="Personal Training" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Corsi di nuoto</h3>
+            <p class="text-gray-700">Programmi su misura con un coach dedicato, per risultati rapidi e sicuri.</p>
+            </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    </section>
+    <!-- Istruttori -->
+    <section id="istruttori" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">Il nostro team</h2>
+            <div class="grid gap-8 md:grid-cols-3 text-center">
+            <div>
+                <img src="assets/coach1.png" alt="Istruttore Marco" class="mx-auto rounded-full mb-4 h-[300px]">
+                <h3 class="text-2xl font-semibold">Marco</h3>
+                <p class="text-gray-600 text-sm">Istruttore CrossFit e personal trainer</p>
+            </div>
+            <div>
+                <img src="assets/coach2.png" alt="Istruttrice Elisa" class="mx-auto rounded-full mb-4 h-[300px]">
+                <h3 class="text-2xl font-semibold">Elisa</h3>
+                <p class="text-gray-600 text-sm">Istruttrice Yoga e Pilates</p>
+            </div>
+            <div>
+                <img src="assets/coach3.png" alt="Istruttore Stefano" class="mx-auto rounded-full mb-4 h-[300px]">
+                <h3 class="text-2xl font-semibold">Stefano</h3>
+                <p class="text-gray-600 text-sm">Personal trainer e nutrizionista</p>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Orari -->
+    <section id="orari" class="py-10 bg-yellow-400">
+        <div class="w-[90%] md:max-w-[70%] mx-auto p-8 rounded-xl text-center bg-white">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">Orari di apertura</h2>
+            <div class="flex flex-col gap-4 text-gray-700">
+                <p><strong>Lunedì - Venerdì:</strong> aperto h24</p>
+                <p><strong>Sabato:</strong> 6:00 - 22:00</p>
+                <p><strong>Domenica:</strong> 8:00 - 18:00</p>
+                <p>Dall'<strong>11 al 23 agosto</strong> saremo chiusi per ferie</p>
+            </div>
+        </div>
+    </section>
+    <!-- Riprova Sociale -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center text-gray-900">Cosa dicono di noi</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-gray-700">
+            <div class="bg-gray-100 p-6 rounded-xl border-2 border-yellow-400">
+                <p>"Ambiente pulito, personale super qualificato. Grazie a Energym ho perso 8kg e ho ritrovato l’energia!"</p>
+                <span class="block mt-4 font-semibold">– Laura M.</span>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl border-2 border-yellow-400">
+                <p>"Corsi ben organizzati e attrezzature top. Mi alleno qui da 2 anni e non potrei cambiare!"</p>
+                <span class="block mt-4 font-semibold">– Davide R.</span>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contatti -->
+    <section id="contatti" class="py-16 bg-gray-100">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">Contattaci</h2>
+            <p class="mb-8 text-gray-700">Compila il modulo per ricevere informazioni o prenotare una prova gratuita.</p>
+            <form action="https://formspree.io/f/tuo-id" method="POST" class="grid gap-4">
+            <input type="text" name="nome" placeholder="Il tuo nome" required class="p-3 rounded border">
+            <input type="email" name="email" placeholder="La tua email" required class="p-3 rounded border">
+            <textarea name="messaggio" placeholder="Il tuo messaggio" rows="4" required class="p-3 rounded border"></textarea>
+            <button type="submit" class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition">
+                Invia richiesta
+            </button>
+            </form>
+        </div>
+    </section>
+
+     <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-7 px-8 w-full z-50 shadow flex flex-col gap-4">
+    <div class="flex flex-col justify-between md:flex-row sm:flex-col gap-6">
+                            <div>
+                                <div class="flex gap-[8px] items-center">
+                                <iconify-icon icon="map:gym" width="28" height="28"  style="color: #fff"></iconify-icon>
+                                <h1 class="text-2xl font-bold">Energym</h1>
+                                </div> 
+                            </div>
+                        <div class="flex flex-col gap-8 md:flex-row sm:flex-col gap-4">  
+                        <div>
+                           <h4 class="text-lg font-bold">Privacy Policy</h4> 
+                           <h4 class="text-lg font-bold">Cookie Policy</h4>
+                           <h4 class="text-lg font-bold">Termini e condizioni</h4>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold">Contatti</h4>
+                            <div class="item">
+                                <i class="fa-solid fa-location-dot fa-lg" style="color: #f5f5fa;"></i>
+                                <p>Milano - Italia</p>
+                            </div>
+                            <div class="item">
+                                <i class="fa-solid fa-envelope fa-lg" style="color: #f5f5fa;"></i>
+                                <p>info@energym.com</p>
+                            </div>
+                        
+                        </div>
+                        <div>
+                        <h4 class="text-lg font-bold">Seguici sui social</h4>
+                        <div class="flex gap-4 mt-4 items-center">
+                            <div class="icon-cont">
+                                <a href="#" target="_blank">
+                                    <iconify-icon icon="mdi:instagram" width="34" height="34"></iconify-icon>
+                                </a>
+                            </div>
+                            <div class="icon-cont">
+                                <a href="#" target="_blank">
+                                    <iconify-icon icon="ic:baseline-facebook" width="34" height="34"></iconify-icon>
+                                </a>
+                            </div>
+                            <div class="icon-cont">
+                                <a href="#" target="_blank">
+                                    <iconify-icon icon="prime:twitter" width="30" height="30"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>  
+                    </div>
+                    </div>
+                </div>
+            </div>
+    <p id="cop">© 2025 Energym All Rights Reserved</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        640: { slidesPerView: 2 },
+        1000: { slidesPerView: 3 },
+    },
+  });
+</script>
+</body>
+</html>
+
+
+
+
